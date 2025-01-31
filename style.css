@@ -1,31 +1,42 @@
-body{
+body {
   font-family: sans-serif;
 }
-li{
+
+li {
   list-style: none;
 }
-a{
+
+a {
   text-decoration: none;
 }
 
-.main{
+.main {
   min-height: 100vh;
   overflow: hidden;
   background-color: #f0f8ff;
 }
 
-#sidebar{
-  min-width: 10%;
+.sidebar-item {
+  padding: 10px 5px;
+}
+
+
+
+#sidebar {
+  flex-grow: 1; 
+  padding:5px;
+  min-width: 100px;
   max-width: 100%;
   background-color: black;
   display: flex;
   flex-direction: column;
 }
-#sidebar.collapsed{
+
+#sidebar.collapsed {
   margin-left: -264px;
 }
 
-.sidebar-link{
+.sidebar-link {
   color: #f0f8ff;
 }
 
@@ -33,14 +44,16 @@ td[data-field="emissions"] {
   text-align: right;
 }
 
-.header-item {
-  margin: 10px; /* Space between items */
+.navbar-item a {
+  display: inline-block;
+  /* Makes the link behave like a box */
+  padding: 10px;
+  /* Controls the clickable area */
   text-decoration: none;
+  /* Removes underline from the link */
   color: black;
-  list-style: none; /* Ensure no bullets for the list items */
-  display: inline-block; /* Keep items inline and size them naturally */
-  font-weight: 100;
-  font-size: medium;
+  border-radius: 10px;
+  /* Adds rounded corners to the clickable area */
 }
 
 .logo {
@@ -50,32 +63,27 @@ td[data-field="emissions"] {
   margin-right: 8px;
 }
 
-.header-item:hover a .logo{
-  filter: invert(1);
-}
-
-.header-item a {
-  display: inline-block; /* Makes the link behave like a box */
-  padding: 10px; /* Controls the clickable area */
-  text-decoration: none; /* Removes underline from the link */
-  color: black;
-  border-radius: 10px; /* Adds rounded corners to the clickable area */
-}
-
-.header-item:hover a {
-  background-color: black; /* Highlight the entire link area on hover */
-  color: aliceblue; /* Text color on hover */
-}
-
-.header-item:first-child a {
-  font-size: x-large; /* Make "CO2-data.org" larger */
-}
-
 .header-ul {
   align-items: center;
   /* display: flex; */
   flex-wrap: wrap;
-  align-items: center; /* Align all items vertically to the center */
   padding: 0;
   margin: 0;
+}
+
+.footer {
+  display: flex;
+  flex-wrap: wrap;
+  background-color: grey;
+  justify-content:center;
+  text-align: center;
+  /* margin: auto; */
+}
+
+.footer a {
+  margin: auto;
+}
+
+@media screen and (max-width: 767px) {
+  #sidebar { display: none; }
 }

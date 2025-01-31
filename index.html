@@ -13,309 +13,372 @@
     href="https://unpkg.com/bootstrap-table@1.21.1/dist/extensions/filter-control/bootstrap-table-filter-control.min.css"
     rel="stylesheet">
   <link href="style.css" rel="stylesheet">
+  <link rel="icon" type="image/svg" href="images/flower-icon.svg">
 </head>
 
 <body>
-  <div style="flex-wrap: wrap; display: flex;">
-    <nav style="min-width: 100%;">
-      <ul class="header-ul" style="display: flex; padding: 0;">
-        <li class="header-item" style="font-size: large;">
-          <a href="#"><img src = "images/flower-icon.svg" class="logo"  alt="Flower Logo"/>CO2-data.org</a> 
-        </li>
-        <li class="header-item">
-          <a href="#">Emissionsliste</a> 
-        </li>
-        <li class="header-item">
-          <a href="#">Die Mission</a> 
-        </li>
-        <li class="header-item">
-          <a href="#">Über Uns</a> 
-        </li>
-      </ul>
-    </nav>
-    <aside id="sidebar" style="flex-grow: 1; padding:10px;">
-      <div class="sidebar-logo">
-        <a href="#">CO2 Data Org</a>
+  <div>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light navbar-item">
+      <a class="navbar-brand" href="index.html"><img src="images/flower-icon.svg" class="logo"
+          alt="Flower Logo" />CO2-data.org</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav navbar-item ">
+          <li class="nav-item navbar-item">
+            <a class="nav-link" onclick="javascript:showElement('co2-table')">Emissionsliste</a>
+          </li>
+          <li class="nav-item navbar-item">
+            <a class="nav-link" href="#" onclick="javascript:showElement('the-mission')">Die Mission</a>
+          </li>
+          <li class="nav-item navbar-item">
+            <a class="nav-link " href="#" onclick="javascript:showElement('about-us')">Über Uns</a>
+          </li>
+        </ul>
       </div>
-      <ul class="sidebar-nav p-0">
-        <li class="sidebar-header">
-          Home
-        </li>
-        <li class="sidebar-item">
-          <a href="#" class="sidebar-link">
-            <span>Profile</span>
-          </a>
-        </li>
-        <li class="sidebar-header">
-          Pages
-        </li>
-      </ul>
-    </aside>
-    <div class="main" style="flex-grow: 1;">
-      <main class="p-3">
-        <div class="container-fluid">
-          <div class="mb-3 text-center">
-            <h1>Hier findest du eine Übersicht der CO2 Ausstöße verschiedener Unternehmen sowie ganzer Länder.</h1>
+    </nav>
+
+    <div style="display: flex;">
+      <aside id="sidebar">
+          <ul class="nav flex-column mb-auto">
+          <li class="sidebar-item">
+            <a href="#co2Table" class="sidebar-link">CO2-Table</a>
+          </li>
+          <li class="sidebar-item">
+            <a href="#faq" class="sidebar-link">FAQ</a>
+          </li>
+        </ul>
+      </aside>
+
+      <div class="main" style="flex-grow: 1;">
+        <main class="p-3">
+          <div class="container-fluid" id="the-mission" style="display: none;">
+            <p>
+              CO2 schlecht, firmen böse.
+            </p>
           </div>
-          <section id="table">
-            <!-- <h2>Data Table</h2> -->
-            <table id="co2Table" class="table table-striped table-bordered" data-toggle="table" data-search="false"
-              data-sortable="true" data-filter-control="true">
-              <thead>
-                <tr>
-                  <th data-field="company" data-sortable="true" data-filter-control="input">Unternehmen
-                  </th>
-                  <th data-field="country" data-sortable="true" data-filter-control="select">Land</th>
-                  <th data-field="emissions" data-sortable="true">CO2 Emissionen(in Mt)</th>
-                  <th data-field="year" data-sortable="true" data-filter-control="select">Jahr</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td>TechNova Corp</td>
-                  <td>United States</td>
-                  <td data-field="emissions">12000</td>
-                  <td>2023</td>
-                </tr>
-                <tr>
-                  <td>GreenWave Ltd</td>
-                  <td>India</td>
-                  <td data-field="emissions">8500</td>
-                  <td>2022</td>
-                </tr>
-                <tr>
-                  <td>EcoPower Inc</td>
-                  <td>Germany</td>
-                  <td data-field="emissions">9500</td>
-                  <td>2021</td>
-                </tr>
-                <tr>
-                  <td>SolarEdge Co</td>
-                  <td>Australia</td>
-                  <td data-field="emissions">7000</td>
-                  <td>2020</td>
-                </tr>
-                <tr>
-                  <td>HydroTech AG</td>
-                  <td>Norway</td>
-                  <td data-field="emissions">6000</td>
-                  <td>2019</td>
-                </tr>
-                <tr>
-                  <td>WindForce Ltd</td>
-                  <td>Japan</td>
-                  <td data-field="emissions">11500</td>
-                  <td>2018</td>
-                </tr>
-                <tr>
-                  <td>BioEnergy SA</td>
-                  <td>France</td>
-                  <td data-field="emissions">4500</td>
-                  <td>2017</td>
-                </tr>
-                <tr>
-                  <td>SustainCorp</td>
-                  <td>Brazil</td>
-                  <td data-field="emissions">10200</td>
-                  <td>2016</td>
-                </tr>
-                <tr>
-                  <td>CarbonFree LLC</td>
-                  <td>Canada</td>
-                  <td data-field="emissions">5300</td>
-                  <td>2015</td>
-                </tr>
-                <tr>
-                  <td>EcoSolutions AG</td>
-                  <td>South Africa</td>
-                  <td data-field="emissions">6400</td>
-                  <td>2014</td>
-                </tr>
-                <tr>
-                  <td>RenewTech BV</td>
-                  <td>Netherlands</td>
-                  <td data-field="emissions">7900</td>
-                  <td>2013</td>
-                </tr>
-                <tr>
-                  <td>SkyGreen Ltd</td>
-                  <td>Italy</td>
-                  <td data-field="emissions">8800</td>
-                  <td>2012</td>
-                </tr>
-                <tr>
-                  <td>WaveEnergy Inc</td>
-                  <td>Portugal</td>
-                  <td data-field="emissions">7000</td>
-                  <td>2011</td>
-                </tr>
-                <tr>
-                  <td>ClearAir Co</td>
-                  <td>Spain</td>
-                  <td data-field="emissions">7500</td>
-                  <td>2010</td>
-                </tr>
-                <tr>
-                  <td>EcoGrid AG</td>
-                  <td>Switzerland</td>
-                  <td data-field="emissions">7200</td>
-                  <td>2009</td>
-                </tr>
-                <tr>
-                  <td>EnviroTech Ltd</td>
-                  <td>Sweden</td>
-                  <td data-field="emissions">6200</td>
-                  <td>2008</td>
-                </tr>
-                <tr>
-                  <td>SmartGreen LLC</td>
-                  <td>Russia</td>
-                  <td data-field="emissions">9600</td>
-                  <td>2007</td>
-                </tr>
-                <tr>
-                  <td>CleanEnergy SA</td>
-                  <td>Argentina</td>
-                  <td data-field="emissions">8800</td>
-                  <td>2006</td>
-                </tr>
-                <tr>
-                  <td>FutureEco Inc</td>
-                  <td>Mexico</td>
-                  <td data-field="emissions">7800</td>
-                  <td>2005</td>
-                </tr>
-                <tr>
-                  <td>EcoVision Co</td>
-                  <td>Turkey</td>
-                  <td data-field="emissions">9100</td>
-                  <td>2004</td>
-                </tr>
-                <tr>
-                  <td>GreenFlux AG</td>
-                  <td>Chile</td>
-                  <td data-field="emissions">8900</td>
-                  <td>2003</td>
-                </tr>
-                <tr>
-                  <td>EcoHorizon Ltd</td>
-                  <td>Colombia</td>
-                  <td data-field="emissions">7600</td>
-                  <td>2002</td>
-                </tr>
-                <tr>
-                  <td>BioGreen BV</td>
-                  <td>Peru</td>
-                  <td data-field="emissions">6700</td>
-                  <td>2001</td>
-                </tr>
-                <tr>
-                  <td>SustainEnergy Inc</td>
-                  <td>South Korea</td>
-                  <td data-field="emissions">10800</td>
-                  <td>2000</td>
-                </tr>
-                <tr>
-                  <td>GlobalTech Industries</td>
-                  <td>United States</td>
-                  <td data-field="emissions">12000</td>
-                  <td>2020</td>
-                </tr>
-                <tr>
-                  <td>Skyline Motors</td>
-                  <td>Japan</td>
-                  <td data-field="emissions">8500</td>
-                  <td>2020</td>
-                </tr>
-                <tr>
-                  <td>Electra Oil</td>
-                  <td>Germany</td>
-                  <td data-field="emissions">7600</td>
-                  <td>2019</td>
-                </tr>
-                <tr>
-                  <td>NovaFuel</td>
-                  <td>Netherlands</td>
-                  <td data-field="emissions">7000</td>
-                  <td>2018</td>
-                </tr>
-                <tr>
-                  <td>Solaris Corp</td>
-                  <td>India</td>
-                  <td data-field="emissions">5900</td>
-                  <td>2017</td>
-                </tr>
-                <tr>
-                  <td>Peak Energy</td>
-                  <td>United Kingdom</td>
-                  <td data-field="emissions">5100</td>
-                  <td>2016</td>
-                </tr>
-                <tr>
-                  <td>Ventura Power</td>
-                  <td>France</td>
-                  <td data-field="emissions">4900</td>
-                  <td>2015</td>
-                </tr>
-                <tr>
-                  <td>Titan Energy</td>
-                  <td>Italy</td>
-                  <td data-field="emissions">5200</td>
-                  <td>2014</td>
-                </tr>
-                <tr>
-                  <td>Infinity Oil</td>
-                  <td>United States</td>
-                  <td data-field="emissions">10700</td>
-                  <td>2013</td>
-                </tr>
-                <tr>
-                  <td>Horizon Fuels</td>
-                  <td>Brazil</td>
-                  <td data-field="emissions">5400</td>
-                  <td>2012</td>
-                </tr>
-                <tr>
-                  <td>BluePeak Resources</td>
-                  <td>United States</td>
-                  <td data-field="emissions">9000</td>
-                  <td>2011</td>
-                </tr>
-                <tr>
-                  <td>DeltaOil</td>
-                  <td>United States</td>
-                  <td data-field="emissions">8800</td>
-                  <td>2011</td>
-                </tr>
-                <tr>
-                  <td>PureTech Petroleum</td>
-                  <td>Saudi Arabia</td>
-                  <td data-field="emissions">10200</td>
-                  <td>2010</td>
-                </tr>
-                <tr>
-                  <td>CrimsonGas</td>
-                  <td>China</td>
-                  <td data-field="emissions">7700</td>
-                  <td>2010</td>
-                </tr>                
-              </tbody>
-            </table>
-          </section>
-        </div>
-      </main>
+          <div class="container-fluid" id="about-us" style="display: none;">
+            <p>
+              Das Ziehl von CO2-Data.Org ist es die Emissionsdaten großer Unternehmen öffentlich zu machen damit die
+              Verursacher entsprechend zur Verantwortung gezogen werden können.
+            </p>
+          </div>
+          <div class="container-fluid" id="co2-table">
+            <div class="m-3">
+              <h2>CO2-Tabelle</h2>
+            </div>
+            <section id="table">
+              <table id="co2Table" class="table table-striped table-bordered" data-toggle="table" data-search="false"
+                data-sortable="true" data-filter-control="true">
+                <thead>
+                  <tr>
+                    <th data-field="company" data-sortable="true" data-filter-control="input">Unternehmen
+                    </th>
+                    <th data-field="country" data-sortable="true" data-filter-control="select">Land</th>
+                    <th data-field="emissions" data-sortable="true">CO2/Jahr (in Mt)</th>
+                    <th data-field="year" data-sortable="true" data-filter-control="select">Jahr</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>TechNova Corp</td>
+                    <td>United States</td>
+                    <td data-field="emissions">12000</td>
+                    <td>2023</td>
+                  </tr>
+                  <tr>
+                    <td>GreenWave Ltd</td>
+                    <td>India</td>
+                    <td data-field="emissions">8500</td>
+                    <td>2022</td>
+                  </tr>
+                  <tr>
+                    <td>EcoPower Inc</td>
+                    <td>Germany</td>
+                    <td data-field="emissions">9500</td>
+                    <td>2021</td>
+                  </tr>
+                  <tr>
+                    <td>SolarEdge Co</td>
+                    <td>Australia</td>
+                    <td data-field="emissions">7000</td>
+                    <td>2020</td>
+                  </tr>
+                  <tr>
+                    <td>HydroTech AG</td>
+                    <td>Norway</td>
+                    <td data-field="emissions">6000</td>
+                    <td>2019</td>
+                  </tr>
+                  <tr>
+                    <td>WindForce Ltd</td>
+                    <td>Japan</td>
+                    <td data-field="emissions">11500</td>
+                    <td>2018</td>
+                  </tr>
+                  <tr>
+                    <td>BioEnergy SA</td>
+                    <td>France</td>
+                    <td data-field="emissions">4500</td>
+                    <td>2017</td>
+                  </tr>
+                  <tr>
+                    <td>SustainCorp</td>
+                    <td>Brazil</td>
+                    <td data-field="emissions">10200</td>
+                    <td>2016</td>
+                  </tr>
+                  <tr>
+                    <td>CarbonFree LLC</td>
+                    <td>Canada</td>
+                    <td data-field="emissions">5300</td>
+                    <td>2015</td>
+                  </tr>
+                  <tr>
+                    <td>EcoSolutions AG</td>
+                    <td>South Africa</td>
+                    <td data-field="emissions">6400</td>
+                    <td>2014</td>
+                  </tr>
+                  <tr>
+                    <td>RenewTech BV</td>
+                    <td>Netherlands</td>
+                    <td data-field="emissions">7900</td>
+                    <td>2013</td>
+                  </tr>
+                  <tr>
+                    <td>SkyGreen Ltd</td>
+                    <td>Italy</td>
+                    <td data-field="emissions">8800</td>
+                    <td>2012</td>
+                  </tr>
+                  <tr>
+                    <td>WaveEnergy Inc</td>
+                    <td>Portugal</td>
+                    <td data-field="emissions">7000</td>
+                    <td>2011</td>
+                  </tr>
+                  <tr>
+                    <td>ClearAir Co</td>
+                    <td>Spain</td>
+                    <td data-field="emissions">7500</td>
+                    <td>2010</td>
+                  </tr>
+                  <tr>
+                    <td>EcoGrid AG</td>
+                    <td>Switzerland</td>
+                    <td data-field="emissions">7200</td>
+                    <td>2009</td>
+                  </tr>
+                  <tr>
+                    <td>EnviroTech Ltd</td>
+                    <td>Sweden</td>
+                    <td data-field="emissions">6200</td>
+                    <td>2008</td>
+                  </tr>
+                  <tr>
+                    <td>SmartGreen LLC</td>
+                    <td>Russia</td>
+                    <td data-field="emissions">9600</td>
+                    <td>2007</td>
+                  </tr>
+                  <tr>
+                    <td>CleanEnergy SA</td>
+                    <td>Argentina</td>
+                    <td data-field="emissions">8800</td>
+                    <td>2006</td>
+                  </tr>
+                  <tr>
+                    <td>FutureEco Inc</td>
+                    <td>Mexico</td>
+                    <td data-field="emissions">7800</td>
+                    <td>2005</td>
+                  </tr>
+                  <tr>
+                    <td>EcoVision Co</td>
+                    <td>Turkey</td>
+                    <td data-field="emissions">9100</td>
+                    <td>2004</td>
+                  </tr>
+                  <tr>
+                    <td>GreenFlux AG</td>
+                    <td>Chile</td>
+                    <td data-field="emissions">8900</td>
+                    <td>2003</td>
+                  </tr>
+                  <tr>
+                    <td>EcoHorizon Ltd</td>
+                    <td>Colombia</td>
+                    <td data-field="emissions">7600</td>
+                    <td>2002</td>
+                  </tr>
+                  <tr>
+                    <td>BioGreen BV</td>
+                    <td>Peru</td>
+                    <td data-field="emissions">6700</td>
+                    <td>2001</td>
+                  </tr>
+                  <tr>
+                    <td>SustainEnergy Inc</td>
+                    <td>South Korea</td>
+                    <td data-field="emissions">10800</td>
+                    <td>2000</td>
+                  </tr>
+                  <tr>
+                    <td>GlobalTech Industries</td>
+                    <td>United States</td>
+                    <td data-field="emissions">12000</td>
+                    <td>2020</td>
+                  </tr>
+                  <tr>
+                    <td>Skyline Motors</td>
+                    <td>Japan</td>
+                    <td data-field="emissions">8500</td>
+                    <td>2020</td>
+                  </tr>
+                  <tr>
+                    <td>Electra Oil</td>
+                    <td>Germany</td>
+                    <td data-field="emissions">7600</td>
+                    <td>2019</td>
+                  </tr>
+                  <tr>
+                    <td>NovaFuel</td>
+                    <td>Netherlands</td>
+                    <td data-field="emissions">7000</td>
+                    <td>2018</td>
+                  </tr>
+                  <tr>
+                    <td>Solaris Corp</td>
+                    <td>India</td>
+                    <td data-field="emissions">5900</td>
+                    <td>2017</td>
+                  </tr>
+                  <tr>
+                    <td>Peak Energy</td>
+                    <td>United Kingdom</td>
+                    <td data-field="emissions">5100</td>
+                    <td>2016</td>
+                  </tr>
+                  <tr>
+                    <td>Ventura Power</td>
+                    <td>France</td>
+                    <td data-field="emissions">4900</td>
+                    <td>2015</td>
+                  </tr>
+                  <tr>
+                    <td>Titan Energy</td>
+                    <td>Italy</td>
+                    <td data-field="emissions">5200</td>
+                    <td>2014</td>
+                  </tr>
+                  <tr>
+                    <td>Infinity Oil</td>
+                    <td>United States</td>
+                    <td data-field="emissions">10700</td>
+                    <td>2013</td>
+                  </tr>
+                  <tr>
+                    <td>Horizon Fuels</td>
+                    <td>Brazil</td>
+                    <td data-field="emissions">5400</td>
+                    <td>2012</td>
+                  </tr>
+                  <tr>
+                    <td>BluePeak Resources</td>
+                    <td>United States</td>
+                    <td data-field="emissions">9000</td>
+                    <td>2011</td>
+                  </tr>
+                  <tr>
+                    <td>DeltaOil</td>
+                    <td>United States</td>
+                    <td data-field="emissions">8800</td>
+                    <td>2011</td>
+                  </tr>
+                  <tr>
+                    <td>PureTech Petroleum</td>
+                    <td>Saudi Arabia</td>
+                    <td data-field="emissions">10200</td>
+                    <td>2010</td>
+                  </tr>
+                  <tr>
+                    <td>CrimsonGas</td>
+                    <td>China</td>
+                    <td data-field="emissions">7700</td>
+                    <td>2010</td>
+                  </tr>
+                </tbody>
+              </table>
+              
+              <div class="m-3" id="faq">
+                <h2>FAQ</h2>
+              </div>
+              <div class="m-3 text-align">
+                <ol class="list-group">
+                  <li class="list-group-item">
+                    Was sind CO₂-Emissionen und warum sind sie problematisch?
+                    CO₂-Emissionen entstehen hauptsächlich durch die Verbrennung fossiler Brennstoffe wie Kohle, Öl und
+                    Gas. Sie tragen zur globalen Erwärmung bei, da CO₂ ein Treibhausgas ist, das die Erdatmosphäre
+                    aufheizt.
+                  </li>
+                  <li class="list-group-item">
+                    Wie werden Emissionsdaten von Unternehmen erfasst?
+                    Die Emissionen werden durch staatliche Umweltbehörden, unabhängige Organisationen und in manchen
+                    Fällen durch die Unternehmen selbst erfasst und in Berichten veröffentlicht.
+                  </li>
+                  <li class="list-group-item">
+                    Welche Branchen verursachen die meisten Emissionen?
+                    Die größten Emittenten sind die Energie-, Transport-, Industrie- und Landwirtschaftssektoren.
+                    Besonders Unternehmen aus der Öl- und Gasbranche gehören zu den größten CO₂-Produzenten.
+                  </li>
+                  <li class="list-group-item">
+                    Was kann ein Unternehmen tun, um seine Emissionen zu reduzieren?
+                    Unternehmen können auf erneuerbare Energien umsteigen, energieeffiziente Technologien einsetzen,
+                    Lieferketten optimieren und Aufforstungsprojekte unterstützen, um CO₂ auszugleichen.
+                  </li>
+                  <li class="list-group-item">
+                    Wie kann ich als Verbraucher dazu beitragen, Emissionen zu senken?
+                    Du kannst deinen CO₂-Fußabdruck reduzieren, indem du weniger Fleisch konsumierst, öffentliche
+                    Verkehrsmittel nutzt, erneuerbare Energiequellen unterstützt und auf nachhaltige Produkte achtest.
+                  </li>
+                </ol>
+              </div>
+            </section>
+          </div>
+        </main>
+      </div>
     </div>
   </div>
   </div>
+
+  <div class="footer" id="footer">
+    <a href="rechtliches.html">Impressum und Rechtliches</a>
+  </div>
+
+  <!-- 
+  Etliche eingebundene JS Dateien um, unter anderem für die korrekte Funktionalität des ausklappbaren Headers und 
+  der linksbündigen Sidebar für Nutzer mit den Spracheinstellungen ar-SA und he-IL
+  -->
   <script src="script.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/jquery/dist/jquery.min.js"></script>
-
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
     crossorigin="anonymous"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap-table@1.24.0/dist/bootstrap-table.min.js"></script>
   <script
     src="https://unpkg.com/bootstrap-table@1.21.1/dist/extensions/filter-control/bootstrap-table-filter-control.min.js"></script>
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js"
+    integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js"
+    integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+    crossorigin="anonymous"></script>
 
 </body>
 
