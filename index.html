@@ -13,38 +13,44 @@
     href="https://unpkg.com/bootstrap-table@1.21.1/dist/extensions/filter-control/bootstrap-table-filter-control.min.css"
     rel="stylesheet">
   <link href="style.css" rel="stylesheet">
-  <link rel="icon" type="image/svg" href="images/flower-icon.svg">
+  <link rel="icon" type="image/svg" href="images/logo.svg">
 </head>
 
 <body>
   <div>
     <nav class="navbar navbar-expand-lg navbar-light bg-light navbar-item">
-      <a class="navbar-brand" href="index.html"><img src="images/flower-icon.svg" class="logo"
-          alt="Flower Logo" />CO2-data.org</a>
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent">
+      <a class="navbar-brand" href="index.html">
+        <img src="images/logo.svg" class="logo" alt="Flower Logo" />
+        CO2-Data.org</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#headerNavbar">
         <span class="navbar-toggler-icon"></span>
       </button>
 
-      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <div class="collapse navbar-collapse" id="headerNavbar">
         <ul class="navbar-nav navbar-item ">
           <li class="nav-item navbar-item">
-            <a class="nav-link" onclick="javascript:showElement('co2-table')">Emissionsliste</a>
+            <a class="nav-link" href="index.html">Emissionsliste</a>
           </li>
           <li class="nav-item navbar-item">
-            <a class="nav-link" href="#" onclick="javascript:showElement('the-mission')">Die Mission</a>
+            <a class="nav-link" href="the-mission.html">Die Mission</a>
           </li>
           <li class="nav-item navbar-item">
-            <a class="nav-link " href="#" onclick="javascript:showElement('about-us')">Über Uns</a>
+            <a class="nav-link " href="about-us.html">Über Uns</a>
           </li>
         </ul>
       </div>
     </nav>
 
+
+
     <div style="display: flex;">
-      <aside id="sidebar">
-          <ul class="nav flex-column mb-auto">
+      <!--
+      Sidebar mit Links zu einzelnen Sektionen, da nur die Unterseite mit der CO2-Tabelle mehrere Abschnitte hat wird die Sidebar auch nur dort angezeigt.
+      -->
+      <aside id="sidebar" class="sidebar">
+        <ul class="nav flex-column mb-auto">
           <li class="sidebar-item">
-            <a href="#co2Table" class="sidebar-link">CO2-Table</a>
+            <a href="#co2Table" class="sidebar-link">CO2-Tabelle</a>
           </li>
           <li class="sidebar-item">
             <a href="#faq" class="sidebar-link">FAQ</a>
@@ -52,62 +58,53 @@
         </ul>
       </aside>
 
+
       <div class="main" style="flex-grow: 1;">
         <main class="p-3">
-          <div class="container-fluid" id="the-mission" style="display: none;">
-            <p>
-              CO2 schlecht, firmen böse.
-            </p>
-          </div>
-          <div class="container-fluid" id="about-us" style="display: none;">
-            <p>
-              Das Ziehl von CO2-Data.Org ist es die Emissionsdaten großer Unternehmen öffentlich zu machen damit die
-              Verursacher entsprechend zur Verantwortung gezogen werden können.
-            </p>
-          </div>
           <div class="container-fluid" id="co2-table">
-            <div class="m-3">
-              <h2>CO2-Tabelle</h2>
-            </div>
+            
             <section id="table">
-              <table id="co2Table" class="table table-striped table-bordered" data-toggle="table" data-search="false"
+              <div class="m-3">
+                <h2>CO2-Tabelle</h2>
+              </div>
+              <table id="co2Table" class="table table-striped table-bordered" data-toggle="table" data-search="true"
                 data-sortable="true" data-filter-control="true">
                 <thead>
                   <tr>
                     <th data-field="company" data-sortable="true" data-filter-control="input">Unternehmen
                     </th>
                     <th data-field="country" data-sortable="true" data-filter-control="select">Land</th>
-                    <th data-field="emissions" data-sortable="true">CO2/Jahr (in Mt)</th>
+                    <th data-field="emissions" data-sortable="true" data-filter-control="input">CO2/Jahr (in Mt)</th>
                     <th data-field="year" data-sortable="true" data-filter-control="select">Jahr</th>
                   </tr>
                 </thead>
                 <tbody>
                   <tr>
-                    <td>TechNova Corp</td>
+                    <td>TechNeo Inc</td>
                     <td>United States</td>
                     <td data-field="emissions">12000</td>
                     <td>2023</td>
                   </tr>
                   <tr>
-                    <td>GreenWave Ltd</td>
+                    <td>GreenWare Ltd</td>
                     <td>India</td>
                     <td data-field="emissions">8500</td>
                     <td>2022</td>
                   </tr>
                   <tr>
-                    <td>EcoPower Inc</td>
+                    <td>EcoPowers Inc</td>
                     <td>Germany</td>
                     <td data-field="emissions">9500</td>
                     <td>2021</td>
                   </tr>
                   <tr>
-                    <td>SolarEdge Co</td>
+                    <td>SolarPrestige Co</td>
                     <td>Australia</td>
                     <td data-field="emissions">7000</td>
                     <td>2020</td>
                   </tr>
                   <tr>
-                    <td>HydroTech AG</td>
+                    <td>HydroForce AG</td>
                     <td>Norway</td>
                     <td data-field="emissions">6000</td>
                     <td>2019</td>
@@ -119,7 +116,7 @@
                     <td>2018</td>
                   </tr>
                   <tr>
-                    <td>BioEnergy SA</td>
+                    <td>BioEnergetics SA</td>
                     <td>France</td>
                     <td data-field="emissions">4500</td>
                     <td>2017</td>
@@ -143,13 +140,13 @@
                     <td>2014</td>
                   </tr>
                   <tr>
-                    <td>RenewTech BV</td>
+                    <td>PowerProton BV</td>
                     <td>Netherlands</td>
                     <td data-field="emissions">7900</td>
                     <td>2013</td>
                   </tr>
                   <tr>
-                    <td>SkyGreen Ltd</td>
+                    <td>GreenSky Ltd</td>
                     <td>Italy</td>
                     <td data-field="emissions">8800</td>
                     <td>2012</td>
@@ -275,25 +272,25 @@
                     <td>2014</td>
                   </tr>
                   <tr>
-                    <td>Infinity Oil</td>
+                    <td>Infinity Petrol</td>
                     <td>United States</td>
                     <td data-field="emissions">10700</td>
                     <td>2013</td>
                   </tr>
                   <tr>
-                    <td>Horizon Fuels</td>
+                    <td>Horizon Skies</td>
                     <td>Brazil</td>
                     <td data-field="emissions">5400</td>
                     <td>2012</td>
                   </tr>
                   <tr>
-                    <td>BluePeak Resources</td>
+                    <td>Green Valley Powers</td>
                     <td>United States</td>
                     <td data-field="emissions">9000</td>
                     <td>2011</td>
                   </tr>
                   <tr>
-                    <td>DeltaOil</td>
+                    <td>DeltaPower</td>
                     <td>United States</td>
                     <td data-field="emissions">8800</td>
                     <td>2011</td>
@@ -312,37 +309,48 @@
                   </tr>
                 </tbody>
               </table>
-              
+
               <div class="m-3" id="faq">
                 <h2>FAQ</h2>
               </div>
               <div class="m-3 text-align">
                 <ol class="list-group">
                   <li class="list-group-item">
-                    Was sind CO₂-Emissionen und warum sind sie problematisch?
-                    CO₂-Emissionen entstehen hauptsächlich durch die Verbrennung fossiler Brennstoffe wie Kohle, Öl und
-                    Gas. Sie tragen zur globalen Erwärmung bei, da CO₂ ein Treibhausgas ist, das die Erdatmosphäre
-                    aufheizt.
+                    <h5>Was sind CO₂-Emissionen und warum sind sie problematisch?</h5>
+                    <p>
+                      CO₂-Emissionen entstehen hauptsächlich durch die Verbrennung fossiler Brennstoffe wie Kohle, Öl
+                      und
+                      Gas. Sie tragen zur globalen Erwärmung bei, da CO₂ ein Treibhausgas ist, das die Erdatmosphäre
+                      aufheizt.
+                    </p>
                   </li>
                   <li class="list-group-item">
-                    Wie werden Emissionsdaten von Unternehmen erfasst?
-                    Die Emissionen werden durch staatliche Umweltbehörden, unabhängige Organisationen und in manchen
-                    Fällen durch die Unternehmen selbst erfasst und in Berichten veröffentlicht.
+                    <h5>Wie werden Emissionsdaten von Unternehmen erfasst?</h5>
+                    <p>
+                      Die Emissionen werden durch staatliche Umweltbehörden, unabhängige Organisationen und in manchen
+                      Fällen durch die Unternehmen selbst erfasst und in Berichten veröffentlicht.
+                    </p>
                   </li>
                   <li class="list-group-item">
-                    Welche Branchen verursachen die meisten Emissionen?
-                    Die größten Emittenten sind die Energie-, Transport-, Industrie- und Landwirtschaftssektoren.
-                    Besonders Unternehmen aus der Öl- und Gasbranche gehören zu den größten CO₂-Produzenten.
+                    <h5>Welche Branchen verursachen die meisten Emissionen?</h5>
+                    <p>
+                      Die größten Emittenten sind die Energie-, Transport-, Industrie- und Landwirtschaftssektoren.
+                      Besonders Unternehmen aus der Öl- und Gasbranche gehören zu den größten CO₂-Produzenten.
+                    </p>
                   </li>
                   <li class="list-group-item">
-                    Was kann ein Unternehmen tun, um seine Emissionen zu reduzieren?
-                    Unternehmen können auf erneuerbare Energien umsteigen, energieeffiziente Technologien einsetzen,
-                    Lieferketten optimieren und Aufforstungsprojekte unterstützen, um CO₂ auszugleichen.
+                    <h5>Was kann ein Unternehmen tun, um seine Emissionen zu reduzieren?</h5>
+                    <p>
+                      Unternehmen können auf erneuerbare Energien umsteigen, energieeffiziente Technologien einsetzen,
+                      Lieferketten optimieren und Aufforstungsprojekte unterstützen, um CO₂ auszugleichen.
+                    </p>
                   </li>
                   <li class="list-group-item">
-                    Wie kann ich als Verbraucher dazu beitragen, Emissionen zu senken?
-                    Du kannst deinen CO₂-Fußabdruck reduzieren, indem du weniger Fleisch konsumierst, öffentliche
-                    Verkehrsmittel nutzt, erneuerbare Energiequellen unterstützt und auf nachhaltige Produkte achtest.
+                    <h5>Wie kann ich als Verbraucher dazu beitragen, Emissionen zu senken?</h5>
+                    <p>
+                      Du kannst deinen CO₂-Fußabdruck reduzieren, indem du weniger Fleisch konsumierst, öffentliche
+                      Verkehrsmittel nutzt, erneuerbare Energiequellen unterstützt und auf nachhaltige Produkte achtest.
+                    </p>
                   </li>
                 </ol>
               </div>
@@ -354,6 +362,8 @@
   </div>
   </div>
 
+
+  <!-- Footer mit Link zu Impressum und Rechtlichen Hinweisen -->
   <div class="footer" id="footer">
     <a href="rechtliches.html">Impressum und Rechtliches</a>
   </div>

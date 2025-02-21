@@ -16,24 +16,26 @@ a {
   background-color: #f0f8ff;
 }
 
+.navbar-toggler{
+  margin: 10px;
+}
+
+.nav-link{
+  padding: 10px 0px 10px 20px;
+}
+
 .sidebar-item {
   padding: 10px 5px;
 }
 
-
-
-#sidebar {
+.sidebar {
   flex-grow: 1; 
   padding:5px;
-  min-width: 100px;
-  max-width: 100%;
+  min-width: 150px;
+  max-width: 150px;
   background-color: black;
   display: flex;
   flex-direction: column;
-}
-
-#sidebar.collapsed {
-  margin-left: -264px;
 }
 
 .sidebar-link {
@@ -44,28 +46,17 @@ td[data-field="emissions"] {
   text-align: right;
 }
 
-.navbar-item a {
-  display: inline-block;
-  /* Makes the link behave like a box */
-  padding: 10px;
-  /* Controls the clickable area */
-  text-decoration: none;
-  /* Removes underline from the link */
-  color: black;
-  border-radius: 10px;
-  /* Adds rounded corners to the clickable area */
-}
-
 .logo {
   width: 40px;
-  height: auto;
-  vertical-align: middle;
-  margin-right: 8px;
+  margin: 0px 10px;
+}
+
+.rechtlichesText{
+  max-width: 600px;
 }
 
 .header-ul {
   align-items: center;
-  /* display: flex; */
   flex-wrap: wrap;
   padding: 0;
   margin: 0;
@@ -77,13 +68,14 @@ td[data-field="emissions"] {
   background-color: grey;
   justify-content:center;
   text-align: center;
-  /* margin: auto; */
 }
 
 .footer a {
   margin: auto;
+  color: lightgray;
 }
 
+/* Um den Content auf kleineren Displays besser lesbar zu machen wird bei einer Bildschirmbreite von weniger als 768 Pixeln ausgeblendet */
 @media screen and (max-width: 767px) {
-  #sidebar { display: none; }
+  .sidebar { display: none; }
 }

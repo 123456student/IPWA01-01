@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CO2 Data Org</title>
+  <link href="https://cdn.lineicons.com/4.0/lineicons.css" rel="stylesheet" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-table@1.24.0/dist/bootstrap-table.min.css">
+  <link
+    href="https://unpkg.com/bootstrap-table@1.21.1/dist/extensions/filter-control/bootstrap-table-filter-control.min.css"
+    rel="stylesheet">
+  <link href="style.css" rel="stylesheet">
+  <link rel="icon" type="image/svg" href="images/logo.svg">
+</head>
+
+<body>
+  <div>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light navbar-item">
+      <a class="navbar-brand" href="index.html"><img src="images/logo.svg" class="logo"
+          alt="Flower Logo" />CO2-Data.org</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav navbar-item ">
+          <li class="nav-item navbar-item">
+            <a class="nav-link" href="index.html">Emissionsliste</a>
+          </li>
+          <li class="nav-item navbar-item">
+            <a class="nav-link" href="the-mission.html">Die Mission</a>
+          </li>
+          <li class="nav-item navbar-item">
+            <a class="nav-link " href="about-us.html">Über Uns</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+
+
+
+    <div style="display: flex;">
+
+      <aside id="sidebar" class="sidebar">
+        <ul class="nav flex-column mb-auto">
+          <li class="sidebar-item">
+            <a href="#about-us" class="sidebar-link">Über Uns</a>
+          </li>
+        </ul>
+      </aside>
+      <div class="main" style="flex-grow: 1;">
+        <main class="p-3">
+          <div class="container-fluid" id="about-us">
+            <div class="m-5 text-align">
+              <div class="m-3">
+                <h2>Über Uns</h2>
+              </div>
+              <p>
+                Das Projekt CO2-Data.Org wird von der Umweltorganisation GreenWorld betrieben und durch Spenden
+                finanziert.
+                Bei Anfragen wenden Sie sich gerne an die Kontaktdaten im Impressum.
+              </p>
+            </div>
+          </div>
+        </main>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Footer mit Link zu Impressum und Rechtlichen Hinweisen -->
+  <div class="footer" id="footer">
+    <a href="rechtliches.html">Impressum und Rechtliches</a>
+  </div>
+
+  <!-- 
+  Etliche eingebundene JS Dateien um, unter anderem für die korrekte Funktionalität des ausklappbaren Headers und 
+  der linksbündigen Sidebar für Nutzer mit den Spracheinstellungen ar-SA und he-IL
+  -->
+  <script src="script.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/jquery/dist/jquery.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap-table@1.24.0/dist/bootstrap-table.min.js"></script>
+  <script
+    src="https://unpkg.com/bootstrap-table@1.21.1/dist/extensions/filter-control/bootstrap-table-filter-control.min.js"></script>
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js"
+    integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js"
+    integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+    crossorigin="anonymous"></script>
+
+</body>
+
+</html>

@@ -17,6 +17,13 @@
 
 <body>
   <div>
+    <!-- 
+    Header mit globalen Links zu drei Unterseiten. Um Ladezeiten beim Seitenwechsel zu ersparen wird nicht auf anderen 
+    Seiten verlinkt sondern nur per JS die Sichtbarkeit der drei Unterseiten gesteuert.
+    
+    Für schmalere Bildschirme ist unter Einsatz von Bootstrap ein ausklappbares Menü eingebaut welches die Links nicht 
+    neben- sondern untereinander anordnet.   
+    -->
     <nav class="navbar navbar-expand-lg navbar-light bg-light navbar-item">
       <a class="navbar-brand" href="index.html"><img src="images/flower-icon.svg" class="logo"
           alt="Flower Logo" />CO2-data.org</a>
@@ -38,27 +45,35 @@
         </ul>
       </div>
     </nav>
+
     <div style="display: flex;">
-      <aside id="sidebar">
+      <!--
+      Sidebar mit Links zu einzelnen Sektionen.
+      -->   
+      <aside id="sidebar" class="sidebar">
         <ul class="nav flex-column mb-auto">
-        <li class="sidebar-item">
-          <a href="#impressum" class="sidebar-link">Impressum</a>
-        </li>
-        <li class="sidebar-item">
-          <a href="#datenschutz" class="sidebar-link">Datenschutz</a>
-        </li>
-      </ul>
-    </aside>
+          <li class="sidebar-item">
+            <a href="#impressum" class="sidebar-link">Impressum</a>
+          </li>
+          <li class="sidebar-item">
+            <a href="#datenschutz" class="sidebar-link">Datenschutz</a>
+          </li>
+        </ul>
+      </aside>
+
       <div class="main" style="flex-grow: 1;">
         <main class="p-3">
-          <div class="container-fluid" style="max-width: 400px;">
+          <div class="container-fluid rechtlichesText" >
+            <!--
+            Sektion zum Impressum
+            -->
             <section id='impressum'>
-              <div >
+              <div>
                 <h1>Impressum</h1>
                 <p><strong>Verantwortlich:</strong></stribg>
                 </p>
                 <p>
-                  Nils Novak <br>
+                  Max Mustermann <br>
                   Musterweg<br>
                   12345 Musterstadt <br>
                 </p>
@@ -77,23 +92,25 @@
                 </p>
               </div>
             </section>
+            <!--
+            Sektion zum Datenschutz
+            -->
             <section id="datenschutz">
-              <div >
+              <div>
                 <h1>Datenschutz</h1>
-                  Die Nutzung unserer Webseite ist in der Regel ohne Angabe personenbezogener Daten möglich. Soweit auf
-                  unseren Seiten personenbezogene Daten (beispielsweise Name, Anschrift oder eMail-Adressen) erhoben
-                  werden, erfolgt dies, soweit möglich, stets auf freiwilliger Basis. Diese Daten werden ohne Ihre
-                  ausdrückliche Zustimmung nicht an Dritte weitergegeben. <br>
-                  Wir weisen darauf hin, dass die Datenübertragung im Internet (z.B. bei der Kommunikation per E-Mail)
-                  Sicherheitslücken aufweisen kann. Ein lückenloser Schutz der Daten vor dem Zugriff durch Dritte ist
-                  nicht möglich. <br>
-                  Der Nutzung von im Rahmen der Impressumspflicht veröffentlichten Kontaktdaten durch Dritte zur
-                  Übersendung von nicht ausdrücklich angeforderter Werbung und Informationsmaterialien wird hiermit
-                  ausdrücklich widersprochen. Die Betreiber der Seiten behalten sich ausdrücklich rechtliche Schritte im
-                  Falle der unverlangten Zusendung von Werbeinformationen, etwa durch Spam-Mails, vor.</p>
+                Die Nutzung unserer Webseite ist in der Regel ohne Angabe personenbezogener Daten möglich. Soweit auf
+                unseren Seiten personenbezogene Daten (beispielsweise Name, Anschrift oder eMail-Adressen) erhoben
+                werden, erfolgt dies, soweit möglich, stets auf freiwilliger Basis. Diese Daten werden ohne Ihre
+                ausdrückliche Zustimmung nicht an Dritte weitergegeben. <br>
+                Wir weisen darauf hin, dass die Datenübertragung im Internet (z.B. bei der Kommunikation per E-Mail)
+                Sicherheitslücken aufweisen kann. Ein lückenloser Schutz der Daten vor dem Zugriff durch Dritte ist
+                nicht möglich. <br>
+                Der Nutzung von im Rahmen der Impressumspflicht veröffentlichten Kontaktdaten durch Dritte zur
+                Übersendung von nicht ausdrücklich angeforderter Werbung und Informationsmaterialien wird hiermit
+                ausdrücklich widersprochen. Die Betreiber der Seiten behalten sich ausdrücklich rechtliche Schritte im
+                Falle der unverlangten Zusendung von Werbeinformationen, etwa durch Spam-Mails, vor.</p>
                 </p>
               </div>
-
             </section>
           </div>
         </main>
@@ -102,16 +119,17 @@
   </div>
   </div>
 
-  
-  <div class="footer">
-    <a href="impressum.html">Impressum</a>
-    <a href="datenschutz.html">Datenschutz</a>
+  <!-- Footer mit Link zu Impressum und Rechtlichen Hinweisen -->
+  <div class="footer" id="footer">
+    <a href="rechtliches.html">Impressum und Rechtliches</a>
   </div>
 
+  <!-- 
+  Etliche eingebundene JS Dateien um, unter anderem für die korrekte Funktionalität des ausklappbaren Headers und 
+  der linksbündigen Sidebar für Nutzer mit den Spracheinstellungen ar-SA und he-IL
+  -->
   <script src="script.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/jquery/dist/jquery.min.js"></script>
-
-
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
     crossorigin="anonymous"></script>
