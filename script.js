@@ -46,6 +46,11 @@ function filterTable() {
 
   for (let row of rows) {
     let text = Array.from(row.cells).map(cell => cell.textContent.toLowerCase()).join(" ");
-    row.style.display = text.includes(searchText ) ? "" : "none";
+    if(text.includes(searchText)){
+      row.style.display = "";
+    }else{
+      row.style.display = "none";
+    }
+    
   }
 }
