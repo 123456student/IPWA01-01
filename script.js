@@ -3,15 +3,14 @@ if (lng === 'ar' || lng === 'he') {
   document.getElementById('sidebar').style.order = 999
 }
 
-let sortDirection = {};
-
+let sortDirection = false;
 function sortTable(columnIndex) {
   const table = document.getElementById("co2Table");
   const tbody = table.tBodies[0];
   const rows = Array.from(tbody.rows);
 
-
-  const direction = sortDirection[columnIndex] = !sortDirection[columnIndex];
+  const direction = sortDirection;
+  sortDirection = !sortDirection;
 
   rows.sort((a, b) => {
     const aText = a.cells[columnIndex].textContent;
